@@ -1,0 +1,18 @@
+# script download list ytdl, kalo mau download banyakkk..
+# tinggal di copy link yt nya ke youtubevideolinks.txt
+
+import os
+
+# tujuan=raw_input("Directory Tujuan= ")
+#filepath=raw_input(repr("File path: (win = D:\youtubevideolinks.txt ato LNX = ~/dir/youtubevideolinks.txt)= "))
+# tujuan="~/Documents" <-- manual
+
+print("File Download di "+t)
+# filepath = '/home/rusagaib/youtubevideolinks.txt' <-- manual
+with open(filepath, "r") as fp:
+   line = fp.readlines()
+   for memek in line:
+          os.system("cd "+tujuan+" && youtube-dl -f 18 -x --extract-audio --audio-format mp3 --audio-quality 0 "+memek)
+fp.close()
+
+# github.com/rusagaib
