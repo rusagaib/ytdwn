@@ -53,7 +53,7 @@ function makeitrun() {
       done
       deactivate
       cd ${dir}
-      echo -e "\U0001F4E6 Done~ saved on /home/<name_of_user>/Music"
+      echo -e "\U0001F4E6 Done~ saved on /home/$(whoami)/Music"
       exec < "$terminal"
       ;;
     *)
