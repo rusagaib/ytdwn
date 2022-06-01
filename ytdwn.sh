@@ -45,23 +45,23 @@ function makeitrun() {
       echo -e "\U0001F4E6 Done~"
       ;;
     -s)
-  	  link_vid=$2
-  	  if [[ -z $link_vid ]];
-  	  then
-  	  	echo -e "Link not Found!!!"
-  	  else
-  		  head
-  	    echo -e "\U0001F4E6 Downloading.."
-  	    ENV_DIR=${dir}/env/bin/activate
-  	    echo ${ENV_DIR}
-  	    source ${ENV_DIR}
-  		  cd ~/Music
-  	    youtube-dl -f 18 -x --extract-audio --audio-format mp3 --audio-quality 0 "$link_vid"
-  	    deactivate
-  	    cd ${dir}
-  	    echo -e "\U0001F4E6 Done~ saved on /home/$(whoami)/Music"
-  	  fi
-  	  ;;
+      link_vid=$2
+      if [[ -z $link_vid ]];
+      then
+            echo -e "Link not Found!!!"
+      else
+              head
+        echo -e "\U0001F4E6 Downloading.."
+        ENV_DIR=${dir}/env/bin/activate
+        echo ${ENV_DIR}
+        source ${ENV_DIR}
+              cd ~/Music
+        youtube-dl -f 18 -x --extract-audio --audio-format mp3 --audio-quality 0 "$link_vid"
+        deactivate
+        cd ${dir}
+        echo -e "\U0001F4E6 Done~ saved on /home/$(whoami)/Music"
+      fi
+      ;;
     run)
       terminal=`tty`
       head
