@@ -56,7 +56,8 @@ function makeitrun() {
         echo ${ENV_DIR}
         source ${ENV_DIR}
               cd ~/Music
-        youtube-dl -f 18 -x --extract-audio --audio-format mp3 --audio-quality 0 "$link_vid"
+        ## youtube-dl -f 18 -x --extract-audio --audio-format mp3 --audio-quality 0 "$link_vid"
+        yt-dlp -f 18 -x --extract-audio --audio-format mp3 --audio-quality 0 "$link_vid" 
         deactivate
         cd ${dir}
         echo -e "\U0001F4E6 Done~ saved on /home/$(whoami)/Music"
@@ -73,7 +74,8 @@ function makeitrun() {
       while read -r line
       do
           cd ~/Music
-          youtube-dl -f 18 -x --extract-audio --audio-format mp3 --audio-quality 0 "$line"
+          ## youtube-dl -f 18 -x --extract-audio --audio-format mp3 --audio-quality 0 "$line"
+          yt-dlp -f 18 -x --extract-audio --audio-format mp3 --audio-quality 0 "$line" 
       done
       deactivate
       cd ${dir}
