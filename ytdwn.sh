@@ -16,7 +16,6 @@ function head {
 
 function makeitrun() {
   opt="$1"
-  # while getopts "h:minimal:default:dev:" opt; do
   case "${opt}" in
     -h)
       head
@@ -56,7 +55,6 @@ function makeitrun() {
         echo ${ENV_DIR}
         source ${ENV_DIR}
               cd ~/Music
-        ## youtube-dl -f 18 -x --extract-audio --audio-format mp3 --audio-quality 0 "$link_vid"
         yt-dlp -f 18 -x --extract-audio --audio-format mp3 --audio-quality 0 "$link_vid" 
         deactivate
         cd ${dir}
@@ -74,7 +72,6 @@ function makeitrun() {
       while read -r line
       do
           cd ~/Music
-          ## youtube-dl -f 18 -x --extract-audio --audio-format mp3 --audio-quality 0 "$line"
           yt-dlp -f 18 -x --extract-audio --audio-format mp3 --audio-quality 0 "$line" 
       done
       deactivate
