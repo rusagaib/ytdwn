@@ -1,4 +1,4 @@
-### Quickstart:
+### Quickstart :sparkles:
 
 1. Clone or download rusagaib/ytdwn on your Home dir
     ```
@@ -30,8 +30,8 @@ you can also put many vid urls line by line on youtubevideolinks.txt file
 
 6. music.mp3 will automaticaly on your ~/Music 
 
-### **New Features :tada:**  
-#### You can also download single url by passing on args 
+### Single download :musical_note: 
+#### You can download single url by passing on args 
 
 1. By giving -s command and yt urls
     ```
@@ -39,6 +39,17 @@ you can also put many vid urls line by line on youtubevideolinks.txt file
     ```
 
 2. Enjoy
+
+### **New Features :tada:**  
+#### You can now download yt playlist url :scream:
+
+1. By giving -p command and add yt playlist urls (Public playlist url Only!)
+    ```
+    ./ytdwn.sh -p yt-playlist-url
+    ```
+
+2. All download playlist saved on `~/Music/playlist/<name - playlist>` with archive file.txt with given source url link :wave:
+
 
 ### For Better Usage:
 
