@@ -11,7 +11,7 @@ function head {
   echo ""
   echo ":~\$ ./ytdwn.sh run (default-MULTI-DOWNLOADS)"
   echo ":~\$ ./ytdwn.sh -s <link-url> (Single-DOWNLOAD)"
-  echo ":~\$ ./ytdwn.sh -p <link-url> (ytb Playlist-DOWNLOAD)"
+  echo ":~\$ ./ytdwn.sh -p <link-url> (Playlist-DOWNLOAD !!!Public Playlist Only!!!)"
   echo ":~\$ ./ytdwn.sh -h  (Usage)"
 }
 
@@ -42,6 +42,7 @@ function makeitrun() {
       source env/bin/activate && pip install -r requirements.txt
       touch youtubevideolinks.txt
       deactivate
+      mkdir ~/Music/playlist
       echo -e "\U0001F4E6 Done~"
       ;;
     -s)
@@ -73,11 +74,11 @@ function makeitrun() {
         ENV_DIR=${dir}/env/bin/activate
         echo ${ENV_DIR}
         source ${ENV_DIR}
-              cd ~/Music
-              yt-dlp -f 18 -x --extract-audio --audio-format mp3 --audio-quality 0 --download-archive /home/$(whoami)/Music/archive-$(date +"%Y-%m-%d").txt "$playlist_link" 
+              cd ~/Music/playlist/
+              yt-dlp -f 18 -x --extract-audio --audio-format mp3 --audio-quality 0 --download-archive /home/$(whoami)/Music/playlist/arc-$(date +"%Y-%m-%d-[%H:%I]").txt "$playlist_link" -o "~/Music/playlist/%(playlist_title)s/%(title)s %(id)s.%(ext)s"
         deactivate
         cd ${dir}
-        echo -e "\U0001F4E6 Done~ saved on /home/$(whoami)/Music"
+        echo -e "\U0001F4E6 Done~ saved on /home/$(whoami)/Music/playlist"
       fi
       ;;
     run)
